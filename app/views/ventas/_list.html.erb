@@ -1,0 +1,8 @@
+<%=
+   list_builder_for @records do |list|
+      list.cliente_id :caption => 'Nro.cliente'
+      list.cliente :with => :nombre, :caption => 'Nombre'
+      list.expira
+      list.total
+    end
+%>

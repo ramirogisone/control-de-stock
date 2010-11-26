@@ -1,0 +1,3231 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (111.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateClientes (20101124153324)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153324')[0m
+Migrating to CreateArticulos (20101124153911)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "articulos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153911')[0m
+Migrating to CreateProveedors (20101124154020)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "proveedors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154020')[0m
+Migrating to CreateVentas (20101124154128)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "ventas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente_id" integer, "expira" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154128')[0m
+Migrating to HabtmVentasArticulos (20101124154305)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "ventas_articulos" ("ventas_id" integer, "articulos_id" integer) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154305')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("articulos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("clientes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("proveedors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ventas")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ventas_articulos")[0m
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:41:07) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (72.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:41:27) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (162.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:41:37) [GET]
+  [4;36;1mArticulo Load (0.7ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.7ms)
+Rendered articulos/_list (2.6ms)
+Rendered commons/_session (0.8ms)
+Completed in 97ms (View: 48, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:41:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:41:50) [GET]
+  [4;35;1mCliente Load (0.5ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.4ms)
+Rendered clientes/_list (2.2ms)
+Rendered commons/_session (0.8ms)
+Completed in 138ms (View: 125, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:41:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:42:03) [GET]
+  [4;36;1mProveedor Load (5.2ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.8ms)
+Rendered proveedors/_list (2.5ms)
+Rendered commons/_session (0.3ms)
+Completed in 42ms (View: 26, DB: 5) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:42:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:42:08) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (158.9ms)
+Rendered rescues/_request_and_response (4.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#new (for 127.0.0.1 at 2010-11-24 13:42:43) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered articulos/_form (4.0ms)
+Rendered commons/_session (0.7ms)
+Completed in 60ms (View: 37, DB: 0) | 200 OK [http://0.0.0.0/articulos/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:42:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:43:11) [GET]
+  [4;35;1mCliente Load (1.7ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.2ms)
+Rendered clientes/_list (1.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 30ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:43:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:43:13) [GET]
+  [4;36;1mProveedor Load (0.5ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (91.9ms)
+Rendered proveedors/_list (1.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 126ms (View: 113, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:43:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:43:16) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (5.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:43:42) [GET]
+  [4;35;1mCliente Load (0.5ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.6ms)
+Rendered clientes/_list (0.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:43:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:43:43) [GET]
+  [4;36;1mArticulo Load (0.5ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.3ms)
+Rendered articulos/_list (1.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 34ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:43:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#new (for 127.0.0.1 at 2010-11-24 13:44:11) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered articulos/_form (2.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 32ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/articulos/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#create (for 127.0.0.1 at 2010-11-24 13:44:23) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"n2F/q1fqsSqneP2nCIvI2bTENbbcwQs7TwpOVeVjlpI=", "articulo"=>{"nombre"=>"preservativos"}}
+  [4;35;1mArticulo Load (0.2ms)[0m   [0mSELECT "articulos".id FROM "articulos" WHERE ("articulos"."nombre" = 'preservativos') LIMIT 1[0m
+  [4;36;1mArticulo Create (0.6ms)[0m   [0;1mINSERT INTO "articulos" ("created_at", "nombre", "updated_at") VALUES('2010-11-24 16:44:23', 'preservativos', '2010-11-24 16:44:23')[0m
+Redirected to http://0.0.0.0:3000/articulos
+Completed in 205ms (DB: 1) | 302 Found [http://0.0.0.0/articulos]
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:44:23) [GET]
+  [4;35;1mArticulo Load (0.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (92.3ms)
+Rendered articulos/_list (7.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 125ms (View: 110, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:44:28) [GET]
+  [4;36;1mCliente Load (0.7ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (10.9ms)
+Rendered clientes/_list (1.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#new (for 127.0.0.1 at 2010-11-24 13:44:36) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered clientes/_form (2.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 39ms (View: 32, DB: 0) | 200 OK [http://0.0.0.0/clientes/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#create (for 127.0.0.1 at 2010-11-24 13:44:42) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"n2F/q1fqsSqneP2nCIvI2bTENbbcwQs7TwpOVeVjlpI=", "cliente"=>{"nombre"=>"gustavo"}}
+  [4;35;1mCliente Load (0.2ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."nombre" = 'gustavo') LIMIT 1[0m
+  [4;36;1mCliente Create (0.5ms)[0m   [0;1mINSERT INTO "clientes" ("created_at", "nombre", "updated_at") VALUES('2010-11-24 16:44:42', 'gustavo', '2010-11-24 16:44:42')[0m
+Redirected to http://0.0.0.0:3000/clientes
+Completed in 120ms (DB: 1) | 302 Found [http://0.0.0.0/clientes]
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:44:42) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (13.7ms)
+Rendered clientes/_list (10.8ms)
+Rendered commons/_session (0.4ms)
+Completed in 65ms (View: 45, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:44:44) [GET]
+  [4;36;1mProveedor Load (1.6ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.7ms)
+Rendered proveedors/_list (2.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 45ms (View: 22, DB: 2) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#new (for 127.0.0.1 at 2010-11-24 13:44:47) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered proveedors/_form (2.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 31ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/proveedors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#create (for 127.0.0.1 at 2010-11-24 13:44:54) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"n2F/q1fqsSqneP2nCIvI2bTENbbcwQs7TwpOVeVjlpI=", "proveedor"=>{"nombre"=>"prime"}}
+  [4;35;1mProveedor Load (0.2ms)[0m   [0mSELECT "proveedors".id FROM "proveedors" WHERE ("proveedors"."nombre" = 'prime') LIMIT 1[0m
+  [4;36;1mProveedor Create (0.5ms)[0m   [0;1mINSERT INTO "proveedors" ("created_at", "nombre", "updated_at") VALUES('2010-11-24 16:44:54', 'prime', '2010-11-24 16:44:54')[0m
+Redirected to http://0.0.0.0:3000/proveedors
+Completed in 116ms (DB: 1) | 302 Found [http://0.0.0.0/proveedors]
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:44:54) [GET]
+  [4;35;1mProveedor Load (12.8ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (19.0ms)
+Rendered proveedors/_list (10.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 69ms (View: 44, DB: 13) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:44:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:45:00) [GET]
+  [4;36;1mArticulo Load (0.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.5ms)
+Rendered articulos/_list (6.5ms)
+Rendered commons/_session (0.3ms)
+Completed in 39ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:45:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:45:08) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.4ms)
+Rendered clientes/_list (9.8ms)
+Rendered commons/_session (0.3ms)
+Completed in 37ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:45:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:45:11) [GET]
+  [4;36;1mProveedor Load (0.6ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (93.8ms)
+Rendered proveedors/_list (10.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 133ms (View: 120, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:45:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:45:23) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (60.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:49:19) [GET]
+  [4;36;1mArticulo Load (0.7ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.7ms)
+Rendered articulos/_list (21.7ms)
+Rendered commons/_session (1.1ms)
+Completed in 106ms (View: 84, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 13:49:31) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.7ms)
+Rendered clientes/_list (8.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 59ms (View: 46, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 13:49:33) [GET]
+  [4;36;1mProveedor Load (0.8ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.7ms)
+Rendered proveedors/_list (7.3ms)
+Rendered commons/_session (0.3ms)
+Completed in 50ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:49:34) [GET]
+  [4;35;1mArticulo Load (0.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (12.8ms)
+Rendered articulos/_list (91.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 132ms (View: 115, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#new (for 127.0.0.1 at 2010-11-24 13:49:38) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered articulos/_form (2.3ms)
+Rendered commons/_session (0.3ms)
+Completed in 41ms (View: 32, DB: 0) | 200 OK [http://0.0.0.0/articulos/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 13:49:43) [GET]
+  [4;36;1mArticulo Load (4.2ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.9ms)
+Rendered articulos/_list (7.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 40ms (View: 24, DB: 4) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 13:49:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 13:51:07) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (78.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-24 20:12:13) [GET]
+  [4;36;1mArticulo Load (0.8ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (37.5ms)
+Rendered articulos/_list (21.1ms)
+Rendered commons/_session (4.3ms)
+Completed in 300ms (View: 234, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 20:12:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#destroy (for 127.0.0.1 at 2010-11-24 20:12:27) [DELETE]
+  Parameters: {"authenticity_token"=>"08Xn0ZbUyZR4bDt2VDnIaPUXn5OoqoYZ1+W+Xo9SGak=", "id"=>"1"}
+  [4;35;1mArticulo Load (0.2ms)[0m   [0mSELECT * FROM "articulos" WHERE ("articulos"."id" = 1) [0m
+
+ActiveRecord::StatementInvalid (Could not find table 'articulos_ventas'):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (125.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-24 20:16:22) [GET]
+  [4;36;1mCliente Load (0.6ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.9ms)
+Rendered clientes/_list (18.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 109ms (View: 67, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 20:16:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-24 20:16:24) [GET]
+  [4;35;1mProveedor Load (0.6ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.7ms)
+Rendered proveedors/_list (9.7ms)
+Rendered commons/_session (0.5ms)
+Completed in 51ms (View: 42, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-24 20:16:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-24 20:16:28) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (53.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:00:51) [GET]
+  [4;36;1mArticulo Load (0.8ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (20.3ms)
+Rendered articulos/_list (13.3ms)
+Rendered commons/_session (0.8ms)
+Completed in 122ms (View: 80, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:00:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 20:01:04) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.3ms)
+Rendered clientes/_list (8.7ms)
+Rendered commons/_session (0.3ms)
+Completed in 53ms (View: 40, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:01:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 20:01:06) [GET]
+  [4;36;1mProveedor Load (0.6ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.9ms)
+Rendered proveedors/_list (10.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 40ms (View: 31, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:01:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 20:01:09) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:08:16) [GET]
+  [4;35;1mArticulo Load (0.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.8ms)
+Rendered articulos/_list (6.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:08:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 20:08:25) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (133.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 20:08:34) [GET]
+  [4;36;1mCliente Load (0.6ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.3ms)
+Rendered clientes/_list (8.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 35ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:08:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 20:08:36) [GET]
+  [4;35;1mProveedor Load (0.9ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (20.6ms)
+Rendered proveedors/_list (6.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 44ms (View: 36, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:08:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:08:39) [GET]
+  [4;36;1mArticulo Load (0.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.4ms)
+Rendered articulos/_list (6.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 41ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:08:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#destroy (for 127.0.0.1 at 2010-11-25 20:08:44) [DELETE]
+  Parameters: {"authenticity_token"=>"flEooFG1WkXdETGlbwmi00r4FB7bjwxX9qATEnvdMfk=", "id"=>"1"}
+  [4;35;1mArticulo Load (0.2ms)[0m   [0mSELECT * FROM "articulos" WHERE ("articulos"."id" = 1) [0m
+
+ActiveRecord::StatementInvalid (Could not find table 'articulos_ventas'):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (140.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to HabtmVentasArticulos (20101124154305)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: sales_articles: DROP TABLE "sales_articles"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (111.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (114.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateClientes (20101124153324)
+Migrating to CreateArticulos (20101124153911)
+Migrating to CreateProveedors (20101124154020)
+Migrating to CreateVentas (20101124154128)
+Migrating to HabtmVentasArticulos (20101124154305)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("articulos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("clientes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("proveedors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ventas")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ventas_articulos")[0m
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:32:08) [GET]
+  [4;36;1mArticulo Load (0.8ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.5ms)
+Rendered articulos/_list (8.5ms)
+Rendered commons/_session (1.1ms)
+Completed in 85ms (View: 59, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:32:08) [GET]
+  [4;35;1mArticulo Load (2.0ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (13.0ms)
+Rendered articulos/_list (6.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 127ms (View: 110, DB: 2) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:32:14) [GET]
+  [4;36;1mArticulo Load (0.7ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.4ms)
+Rendered articulos/_list (8.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:32:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 20:32:18) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.5ms)
+Rendered clientes/_list (7.5ms)
+Rendered commons/_session (0.3ms)
+Completed in 41ms (View: 30, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:32:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:32:22) [GET]
+  [4;36;1mArticulo Load (0.9ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.1ms)
+Rendered articulos/_list (5.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 44ms (View: 34, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:32:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 20:32:28) [GET]
+
+NameError (uninitialized constant Ventum):
+  
+
+Rendered rescues/_trace (56.6ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:33:46) [GET]
+  [4;35;1mArticulo Load (0.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.7ms)
+Rendered articulos/_list (6.5ms)
+Rendered commons/_session (0.5ms)
+Completed in 134ms (View: 29, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:33:49) [GET]
+  [4;36;1mArticulo Load (0.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (10.3ms)
+Rendered articulos/_list (6.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 43ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:33:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:34:12) [GET]
+  [4;35;1mArticulo Load (1.1ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (17.3ms)
+Rendered articulos/_list (7.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 48ms (View: 36, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:34:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:34:34) [GET]
+  [4;36;1mArticulo Load (0.8ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.7ms)
+Rendered articulos/_list (8.6ms)
+Rendered commons/_session (1.0ms)
+Completed in 97ms (View: 73, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:34:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:35:36) [GET]
+  [4;36;1mArticulo Load (1.2ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (12.2ms)
+Rendered articulos/_list (19.1ms)
+Rendered commons/_session (1.1ms)
+Completed in 166ms (View: 121, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:35:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 20:35:40) [GET]
+  [4;35;1mCliente Load (0.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (9.1ms)
+Rendered clientes/_list (8.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 140ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:35:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 20:35:42) [GET]
+  [4;36;1mProveedor Load (0.9ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.6ms)
+Rendered proveedors/_list (10.7ms)
+Rendered commons/_session (0.3ms)
+Completed in 40ms (View: 32, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:35:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 20:35:44) [GET]
+  [4;35;1mCliente Load (1.9ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.8ms)
+Rendered clientes/_list (6.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 40ms (View: 28, DB: 2) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:35:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 20:35:45) [GET]
+  [4;36;1mArticulo Load (0.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.2ms)
+Rendered articulos/_list (8.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 20:35:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 20:56:09) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (31.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:02:47) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:04:03) [GET]
+  [4;36;1mArticulo Load (109.4ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (31.3ms)
+Rendered commons/_session (15.6ms)
+Completed in 1031ms (View: 547, DB: 109) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 21:04:17) [GET]
+  [4;35;1mCliente Load (0.0ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (46.9ms)
+Rendered clientes/_list (46.9ms)
+Rendered commons/_session (0.0ms)
+Completed in 641ms (View: 438, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 21:04:20) [GET]
+  [4;36;1mProveedor Load (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered proveedors/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 125, DB: 0) | 200 OK [http://localhost/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:04:24) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (171.9ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:04:39) [GET]
+  [4;35;1mArticulo Load (0.0ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (62.5ms)
+Rendered articulos/_list (46.9ms)
+Rendered commons/_session (0.0ms)
+Completed in 766ms (View: 547, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#show (for 127.0.0.1 at 2010-11-25 21:04:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSELECT * FROM "articulos" WHERE ("articulos"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering articulos/show
+Rendered commons/_session (0.0ms)
+Completed in 219ms (View: 172, DB: 0) | 200 OK [http://localhost/articulos/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:04:47) [GET]
+  [4;35;1mArticulo Load (0.0ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (15.6ms)
+Rendered commons/_session (15.6ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 21:04:50) [GET]
+  [4;36;1mCliente Load (15.6ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (62.5ms)
+Rendered clientes/_list (31.3ms)
+Rendered commons/_session (0.0ms)
+Completed in 531ms (View: 344, DB: 16) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:04:53) [GET]
+  [4;35;1mArticulo Load (0.0ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 125, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#edit (for 127.0.0.1 at 2010-11-25 21:04:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSELECT * FROM "articulos" WHERE ("articulos"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered articulos/_form (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 219ms (View: 172, DB: 0) | 200 OK [http://localhost/articulos/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:04:57) [GET]
+  [4;35;1mArticulo Load (15.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (62.5ms)
+Rendered articulos/_list (46.9ms)
+Rendered commons/_session (0.0ms)
+Completed in 656ms (View: 438, DB: 16) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:04:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:05:41) [GET]
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 141ms (View: 94, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:05:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:08:35) [GET]
+  [4;36;1mArticulo Load (15.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered articulos/_list (31.3ms)
+Rendered commons/_session (0.0ms)
+Completed in 500ms (View: 344, DB: 16) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:08:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:08:41) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (171.9ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:10:06) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:13:03) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:13:12) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (343.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (15.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateClientes (20101124153324)
+  [4;35;1mSQL (15.6ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153324')[0m
+Migrating to CreateArticulos (20101124153911)
+  [4;35;1mSQL (15.6ms)[0m   [0mCREATE TABLE "articulos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153911')[0m
+Migrating to CreateProveedors (20101124154020)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "proveedors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154020')[0m
+Migrating to CreateVentas (20101124154128)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "ventas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente_id" integer, "expira" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154128')[0m
+Migrating to HabtmArticulosVentas (20101124154305)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "articulos_ventas" ("articulos_id" integer, "ventas_id" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154305')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("articulos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("articulos_ventas")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("clientes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("proveedors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ventas")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (140.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (218.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateClientes (20101124153324)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153324')[0m
+Migrating to CreateArticulos (20101124153911)
+  [4;35;1mSQL (15.6ms)[0m   [0mCREATE TABLE "articulos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124153911')[0m
+Migrating to CreateProveedors (20101124154020)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "proveedors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154020')[0m
+Migrating to CreateVentas (20101124154128)
+  [4;35;1mSQL (15.6ms)[0m   [0mCREATE TABLE "ventas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente_id" integer, "expira" date, "total" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154128')[0m
+Migrating to HabtmArticulosVentas (20101124154305)
+  [4;35;1mSQL (15.6ms)[0m   [0mCREATE TABLE "articulos_ventas" ("articulos_id" integer, "ventas_id" integer, "cuenta" decimal, "total" decimal) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101124154305')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("articulos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("articulos_ventas")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("clientes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("proveedors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ventas")[0m
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:55:49) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (265.6ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 21:56:03) [GET]
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (15.6ms)
+Completed in 938ms (View: 500, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:56:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 21:56:10) [GET]
+  [4;35;1mArticulo Load (0.0ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 406ms (View: 297, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:56:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 21:56:13) [GET]
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:56:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 21:56:14) [GET]
+  [4;35;1mProveedor Load (0.0ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered proveedors/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 141ms (View: 109, DB: 0) | 200 OK [http://localhost/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 21:56:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:56:19) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (328.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:57:18) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:58:23) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:58:24) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (312.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 21:58:26) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:00:02) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:01:10) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (312.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:01:45) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:01:47) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:03:22) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:04:25) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:05:17) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (265.6ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:05:20) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:05:38) [GET]
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 516ms (View: 234, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:05:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:05:42) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:09:53) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (171.9ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:10:05) [GET]
+  [4;35;1mCliente Load (15.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 297ms (View: 141, DB: 16) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:10:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:10:09) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:10:39) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: app_name and owner):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:11:22) [GET]
+
+NameError (uninitialized constant Ventum):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:14:54) [GET]
+  [4;36;1mVentum Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: venta: SELECT * FROM "venta" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: venta: SELECT * FROM "venta" ):
+  C:1:in `__send__'
+  C:1:in `with_scope'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:15:44) [GET]
+  [4;35;1mVentum Load (0.0ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:15:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:15:51) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (93.8ms)
+Rendered commons/_session (0.0ms)
+Completed in 453ms (View: 281, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:15:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:15:57) [GET]
+  [4;36;1mVentum Load (15.6ms)[0m   [0;1mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 141ms (View: 78, DB: 16) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:15:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:16:33) [GET]
+  [4;35;1mVentum Load (0.0ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered ventas/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 297ms (View: 172, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:16:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:16:40) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (31.3ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:16:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:17:32) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:17:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:18:04) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 22:18:10) [GET]
+  [4;36;1mProveedor Load (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered proveedors/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 172ms (View: 125, DB: 0) | 200 OK [http://localhost/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:18:12) [GET]
+  [4;35;1mVentum Load (15.6ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 359ms (View: 78, DB: 16) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 22:18:19) [GET]
+  [4;36;1mProveedor Load (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered proveedors/_list (0.0ms)
+Rendered commons/_session (15.6ms)
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:18:20) [GET]
+  [4;35;1mCliente Load (0.0ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 125, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 22:18:23) [GET]
+  [4;36;1mArticulo Load (15.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (62.5ms)
+Rendered articulos/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 703ms (View: 578, DB: 16) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:18:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:19:22) [GET]
+  [4;35;1mVentum Load (0.0ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 141ms (View: 78, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:19:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:19:24) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:19:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:19:44) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 313ms (View: 281, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:19:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:22:54) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered ventas/_form (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:22:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:24:19) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+  [4;36;1mCliente Load (15.6ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendered ventas/_form (62.5ms)
+Rendered commons/_session (0.0ms)
+Completed in 328ms (View: 281, DB: 16) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:24:25) [GET]
+  [4;35;1mCliente Load (0.0ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#new (for 127.0.0.1 at 2010-11-25 22:24:27) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered clientes/_form (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/clientes/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#create (for 127.0.0.1 at 2010-11-25 22:24:30) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"kXU1pDMobjx/h52sgakVp1M7EamEPuftZ5JwMGrxcR4=", "cliente"=>{"nombre"=>"jorge"}}
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."nombre" = 'jorge') LIMIT 1[0m
+  [4;35;1mCliente Create (46.9ms)[0m   [0mINSERT INTO "clientes" ("created_at", "nombre", "updated_at") VALUES('2010-11-26 01:24:30', 'jorge', '2010-11-26 01:24:30')[0m
+Redirected to http://localhost:3000/clientes
+Completed in 422ms (DB: 47) | 302 Found [http://localhost/clientes]
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:24:31) [GET]
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 125, DB: 0) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:24:34) [GET]
+  [4;35;1mVentum Load (0.0ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (0.0ms)
+Rendered commons/_session (15.6ms)
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-11-25 22:24:37) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendered ventas/_form (78.1ms)
+Rendered commons/_session (0.0ms)
+Completed in 203ms (View: 172, DB: 0) | 200 OK [http://localhost/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#create (for 127.0.0.1 at 2010-11-25 22:24:46) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"kXU1pDMobjx/h52sgakVp1M7EamEPuftZ5JwMGrxcR4=", "venta"=>{"total"=>"100", "cliente_id"=>"1", "expira"=>"2010-12-31"}}
+  [4;35;1mVentum Create (15.6ms)[0m   [0mINSERT INTO "ventas" ("created_at", "updated_at", "cliente_id", "total", "expira") VALUES('2010-11-26 01:24:46', '2010-11-26 01:24:46', 1, 100.0, '2010-12-31')[0m
+Redirected to http://localhost:3000/ventas
+Completed in 578ms (DB: 16) | 302 Found [http://localhost/ventas]
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:24:47) [GET]
+  [4;36;1mVentum Load (0.0ms)[0m   [0;1mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered ventas/_list (31.3ms)
+Rendered commons/_session (0.0ms)
+Completed in 141ms (View: 94, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:24:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:25:19) [GET]
+  [4;35;1mVentum Load (0.0ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+
+ActionView::TemplateError (undefined method `nombre' for #<Array:0x48323a0>) on line #4 of app/views/ventas/_list.html.erb:
+1: <%=
+2:    list_builder_for @records do |list|
+3:       list.cliente_id
+4:       list.cliente.nombre
+5:       list.expira
+6:       list.total
+7:     end
+
+    app/views/ventas/_list.html.erb:4
+    app/views/ventas/_list.html.erb:2
+    app/views/commons/index.html.erb:3
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (171.9ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:26:39) [GET]
+  [4;36;1mVentum Load (15.6ms)[0m   [0;1mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (46.9ms)
+  [4;35;1mCliente Load (0.0ms)[0m   [0mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (156.3ms)
+Rendered commons/_session (15.6ms)
+Completed in 719ms (View: 594, DB: 16) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:27:26) [GET]
+  [4;36;1mVentum Load (0.0ms)[0m   [0;1mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+  [4;35;1mCliente Load (0.0ms)[0m   [0mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (62.5ms)
+Rendered commons/_session (0.0ms)
+Completed in 391ms (View: 344, DB: 0) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:27:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 22:27:37) [GET]
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered articulos/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 281ms (View: 78, DB: 0) | 200 OK [http://localhost/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:27:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:27:40) [GET]
+  [4;35;1mCliente Load (15.6ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+Rendered clientes/_list (15.6ms)
+Rendered commons/_session (0.0ms)
+Completed in 156ms (View: 109, DB: 16) | 200 OK [http://localhost/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:27:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 22:27:42) [GET]
+  [4;36;1mProveedor Load (15.6ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.6ms)
+Rendered proveedors/_list (0.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 109ms (View: 78, DB: 16) | 200 OK [http://localhost/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:27:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:27:43) [GET]
+  [4;35;1mVentum Load (15.6ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (31.3ms)
+  [4;36;1mCliente Load (0.0ms)[0m   [0;1mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (156.3ms)
+Rendered commons/_session (0.0ms)
+Completed in 641ms (View: 500, DB: 16) | 200 OK [http://localhost/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:27:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 22:39:16) [GET]
+  [4;36;1mArticulo Load (0.7ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered articulos/_list (11.2ms)
+Rendered commons/_session (0.8ms)
+Completed in 95ms (View: 70, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:39:19) [GET]
+  [4;35;1mCliente Load (1.0ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (9.2ms)
+Rendered clientes/_list (9.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 141ms (View: 36, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 22:39:22) [GET]
+  [4;36;1mProveedor Load (0.5ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.5ms)
+Rendered proveedors/_list (2.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 42ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:39:24) [GET]
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.5ms)
+  [4;36;1mCliente Load (0.3ms)[0m   [0;1mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (17.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 137ms (View: 126, DB: 0) | 200 OK [http://0.0.0.0/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 22:39:29) [GET]
+  [4;35;1mArticulo Load (0.5ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (9.5ms)
+Rendered articulos/_list (1.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 43ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:39:32) [GET]
+  [4;36;1mCliente Load (0.9ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.4ms)
+Rendered clientes/_list (19.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 45ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#destroy (for 127.0.0.1 at 2010-11-25 22:39:36) [DELETE]
+  Parameters: {"authenticity_token"=>"yD28YaAOKfEvqr2D8lhfnDRxr2YlN5UARQ+6GEMjAZA=", "id"=>"1"}
+  [4;35;1mCliente Load (0.2ms)[0m   [0mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+  [4;36;1mCliente Destroy (0.6ms)[0m   [0;1mDELETE FROM "clientes" WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/clientes
+Completed in 309ms (DB: 1) | 302 Found [http://0.0.0.0/clientes/1]
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:39:37) [GET]
+  [4;35;1mCliente Load (0.5ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (10.9ms)
+Rendered clientes/_list (0.9ms)
+Rendered commons/_session (0.3ms)
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-11-25 22:39:40) [GET]
+  [4;36;1mProveedor Load (0.7ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.6ms)
+Rendered proveedors/_list (0.9ms)
+Rendered commons/_session (0.4ms)
+Completed in 29ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-11-25 22:39:42) [GET]
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.5ms)
+  [4;36;1mCliente Load (0.2ms)[0m   [0;1mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (16.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 133ms (View: 32, DB: 0) | 200 OK [http://0.0.0.0/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:39:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#destroy (for 127.0.0.1 at 2010-11-25 22:39:46) [DELETE]
+  Parameters: {"authenticity_token"=>"yD28YaAOKfEvqr2D8lhfnDRxr2YlN5UARQ+6GEMjAZA=", "id"=>"1"}
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" WHERE ("ventas"."id" = 1) [0m
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos" INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos"  INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (202.9ms)
+Rendered rescues/_request_and_response (7.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#destroy (for 127.0.0.1 at 2010-11-25 22:43:04) [DELETE]
+  Parameters: {"authenticity_token"=>"yD28YaAOKfEvqr2D8lhfnDRxr2YlN5UARQ+6GEMjAZA=", "id"=>"1"}
+  [4;35;1mVentum Load (0.3ms)[0m   [0mSELECT * FROM "ventas" WHERE ("ventas"."id" = 1) [0m
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos" INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos"  INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (60.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-11-25 22:43:12) [GET]
+  [4;35;1mCliente Load (0.5ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.7ms)
+Rendered clientes/_list (0.8ms)
+Rendered commons/_session (0.3ms)
+Completed in 33ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:43:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-11-25 22:43:13) [GET]
+  [4;36;1mArticulo Load (0.5ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (112.7ms)
+Rendered articulos/_list (1.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 135ms (View: 125, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-25 22:43:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

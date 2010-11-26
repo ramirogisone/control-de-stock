@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cliente: 
+  expira: 2010-11-24
+  total: 
+
+two:
+  cliente: 
+  expira: 2010-11-24
+  total: 
