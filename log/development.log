@@ -3229,3 +3229,394 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-12-01 16:17:56) [GET]
+  [4;36;1mArticulo Load (0.7ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.4ms)
+Rendered articulos/_list (2.9ms)
+Rendered commons/_session (1.1ms)
+Completed in 155ms (View: 130, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:17:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#new (for 127.0.0.1 at 2010-12-01 16:17:59) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered articulos/_form (3.0ms)
+Rendered commons/_session (0.2ms)
+Completed in 145ms (View: 109, DB: 0) | 200 OK [http://0.0.0.0/articulos/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#create (for 127.0.0.1 at 2010-12-01 16:18:08) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "articulo"=>{"nombre"=>"galletas"}}
+  [4;35;1mArticulo Load (0.2ms)[0m   [0mSELECT "articulos".id FROM "articulos" WHERE ("articulos"."nombre" = 'galletas') LIMIT 1[0m
+  [4;36;1mArticulo Create (0.8ms)[0m   [0;1mINSERT INTO "articulos" ("created_at", "nombre", "updated_at") VALUES('2010-12-01 19:18:08', 'galletas', '2010-12-01 19:18:08')[0m
+Redirected to http://0.0.0.0:3000/articulos
+Completed in 202ms (DB: 1) | 302 Found [http://0.0.0.0/articulos]
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-12-01 16:18:09) [GET]
+  [4;35;1mArticulo Load (0.6ms)[0m   [0mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.4ms)
+Rendered articulos/_list (9.1ms)
+Rendered commons/_session (0.2ms)
+Completed in 41ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-12-01 16:18:14) [GET]
+  [4;36;1mCliente Load (0.6ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (10.6ms)
+Rendered clientes/_list (2.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#new (for 127.0.0.1 at 2010-12-01 16:18:17) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered clientes/_form (2.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 28ms (View: 22, DB: 0) | 200 OK [http://0.0.0.0/clientes/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientesController#create (for 127.0.0.1 at 2010-12-01 16:18:22) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "cliente"=>{"nombre"=>"ramiro"}}
+  [4;35;1mCliente Load (0.2ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."nombre" = 'ramiro') LIMIT 1[0m
+  [4;36;1mCliente Create (0.3ms)[0m   [0;1mINSERT INTO "clientes" ("created_at", "nombre", "updated_at") VALUES('2010-12-01 19:18:22', 'ramiro', '2010-12-01 19:18:22')[0m
+Redirected to http://0.0.0.0:3000/clientes
+Completed in 229ms (DB: 0) | 302 Found [http://0.0.0.0/clientes]
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2010-12-01 16:18:22) [GET]
+  [4;35;1mCliente Load (0.7ms)[0m   [0mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.0ms)
+Rendered clientes/_list (9.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/clientes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-12-01 16:18:25) [GET]
+  [4;36;1mProveedor Load (0.5ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.4ms)
+Rendered proveedors/_list (2.1ms)
+Rendered commons/_session (0.2ms)
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#new (for 127.0.0.1 at 2010-12-01 16:18:28) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered proveedors/_form (2.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 114ms (View: 25, DB: 0) | 200 OK [http://0.0.0.0/proveedors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#create (for 127.0.0.1 at 2010-12-01 16:18:34) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "proveedor"=>{"nombre"=>"terrabusi"}}
+  [4;35;1mProveedor Load (0.2ms)[0m   [0mSELECT "proveedors".id FROM "proveedors" WHERE ("proveedors"."nombre" = 'terrabusi') LIMIT 1[0m
+  [4;36;1mProveedor Create (0.3ms)[0m   [0;1mINSERT INTO "proveedors" ("created_at", "nombre", "updated_at") VALUES('2010-12-01 19:18:34', 'terrabusi', '2010-12-01 19:18:34')[0m
+Redirected to http://0.0.0.0:3000/proveedors
+Completed in 183ms (DB: 0) | 302 Found [http://0.0.0.0/proveedors]
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-12-01 16:18:34) [GET]
+  [4;35;1mProveedor Load (0.6ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (18.7ms)
+Rendered proveedors/_list (13.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 71ms (View: 48, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-12-01 16:18:39) [GET]
+  [4;36;1mVentum Load (0.2ms)[0m   [0;1mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (7.8ms)
+  [4;35;1mCliente Load (7.4ms)[0m   [0mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (57.7ms)
+Rendered commons/_session (0.3ms)
+Completed in 178ms (View: 73, DB: 8) | 200 OK [http://0.0.0.0/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:18:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#destroy (for 127.0.0.1 at 2010-12-01 16:18:52) [DELETE]
+  Parameters: {"authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "id"=>"1"}
+  [4;36;1mVentum Load (0.3ms)[0m   [0;1mSELECT * FROM "ventas" WHERE ("ventas"."id" = 1) [0m
+  [4;35;1mArticulo Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos" INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos"  INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (133.1ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#new (for 127.0.0.1 at 2010-12-01 16:18:59) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+  [4;36;1mCliente Load (0.3ms)[0m   [0;1mSELECT * FROM "clientes" ORDER BY nombre[0m
+Rendered ventas/_form (11.6ms)
+Rendered commons/_session (0.3ms)
+Completed in 43ms (View: 32, DB: 0) | 200 OK [http://0.0.0.0/ventas/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:19:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-12-01 16:19:40) [GET]
+  [4;35;1mProveedor Load (0.6ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.0ms)
+Rendered proveedors/_list (5.8ms)
+Rendered commons/_session (0.3ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:19:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#destroy (for 127.0.0.1 at 2010-12-01 16:19:45) [DELETE]
+  Parameters: {"authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "id"=>"1"}
+  [4;36;1mProveedor Load (0.2ms)[0m   [0;1mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;35;1mProveedor Destroy (0.3ms)[0m   [0mDELETE FROM "proveedors" WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/proveedors
+Completed in 146ms (DB: 1) | 302 Found [http://0.0.0.0/proveedors/1]
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-12-01 16:19:45) [GET]
+  [4;36;1mProveedor Load (0.6ms)[0m   [0;1mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (8.1ms)
+Rendered proveedors/_list (1.0ms)
+Rendered commons/_session (0.3ms)
+Completed in 30ms (View: 19, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:19:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#new (for 127.0.0.1 at 2010-12-01 16:19:58) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered proveedors/_form (1.4ms)
+Rendered commons/_session (0.3ms)
+Completed in 30ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/proveedors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:19:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProveedorsController#create (for 127.0.0.1 at 2010-12-01 16:20:05) [POST]
+  Parameters: {"commit"=>"Guardar estos cambios", "authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "proveedor"=>{"nombre"=>"terrabusi"}}
+  [4;35;1mProveedor Load (0.2ms)[0m   [0mSELECT "proveedors".id FROM "proveedors" WHERE ("proveedors"."nombre" = 'terrabusi') LIMIT 1[0m
+  [4;36;1mProveedor Create (0.3ms)[0m   [0;1mINSERT INTO "proveedors" ("created_at", "nombre", "updated_at") VALUES('2010-12-01 19:20:05', 'terrabusi', '2010-12-01 19:20:05')[0m
+Redirected to http://0.0.0.0:3000/proveedors
+Completed in 130ms (DB: 0) | 302 Found [http://0.0.0.0/proveedors]
+
+
+Processing ProveedorsController#index (for 127.0.0.1 at 2010-12-01 16:20:06) [GET]
+  [4;35;1mProveedor Load (0.6ms)[0m   [0mSELECT * FROM "proveedors" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (11.2ms)
+Rendered proveedors/_list (6.1ms)
+Rendered commons/_session (0.3ms)
+Completed in 129ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/proveedors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:20:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#index (for 127.0.0.1 at 2010-12-01 16:20:26) [GET]
+  [4;36;1mArticulo Load (0.6ms)[0m   [0;1mSELECT * FROM "articulos" ORDER BY nombre[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (20.7ms)
+Rendered articulos/_list (19.0ms)
+Rendered commons/_session (5.1ms)
+Completed in 93ms (View: 59, DB: 1) | 200 OK [http://0.0.0.0/articulos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:20:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticulosController#destroy (for 127.0.0.1 at 2010-12-01 16:20:31) [DELETE]
+  Parameters: {"authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "id"=>"1"}
+  [4;35;1mArticulo Load (0.2ms)[0m   [0mSELECT * FROM "articulos" WHERE ("articulos"."id" = 1) [0m
+  [4;36;1mVenta Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: articulos_ventas.articulo_id: SELECT * FROM "ventas" INNER JOIN "articulos_ventas" ON "ventas".id = "articulos_ventas".venta_id WHERE ("articulos_ventas".articulo_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.articulo_id: SELECT * FROM "ventas"  INNER JOIN "articulos_ventas" ON "ventas".id = "articulos_ventas".venta_id WHERE ("articulos_ventas".articulo_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (305.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#index (for 127.0.0.1 at 2010-12-01 16:20:57) [GET]
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.0ms)
+  [4;36;1mCliente Load (0.2ms)[0m   [0;1mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendered ventas/_list (14.2ms)
+Rendered commons/_session (0.3ms)
+Completed in 40ms (View: 29, DB: 0) | 200 OK [http://0.0.0.0/ventas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-01 16:20:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VentasController#destroy (for 127.0.0.1 at 2010-12-01 16:21:07) [DELETE]
+  Parameters: {"authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "id"=>"1"}
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" WHERE ("ventas"."id" = 1) [0m
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos" INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos"  INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (219.2ms)
+Rendered rescues/_request_and_response (5.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VentasController#destroy (for 127.0.0.1 at 2010-12-01 16:21:20) [DELETE]
+  Parameters: {"authenticity_token"=>"HUp/AgtRvHM7UMtLWEWdJDfPaK32PEBfQPXuHaTub1Q=", "id"=>"1"}
+  [4;35;1mVentum Load (0.2ms)[0m   [0mSELECT * FROM "ventas" WHERE ("ventas"."id" = 1) [0m
+  [4;36;1mArticulo Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos" INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: articulos_ventas.venta_id: SELECT * FROM "articulos"  INNER JOIN "articulos_ventas" ON "articulos".id = "articulos_ventas".articulo_id WHERE ("articulos_ventas".venta_id = 1 ) ):
+  (eval):3:in `destroy_without_callbacks'
+
+Rendered rescues/_trace (133.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
