@@ -1,0 +1,9 @@
+one:
+  usuario: MyString
+  email: MyString
+  clave: MyString
+
+two:
+  usuario: MyString
+  email: MyString
+  clave: MyString
